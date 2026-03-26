@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Market Street</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 
   <style>
@@ -95,7 +94,7 @@
       line-height: 1.6;
     }
 
-    /* WHY US */
+    /* SERVICE BUBBLES */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -105,17 +104,26 @@
 
     .feature {
       padding: 20px;
-      border-radius: 12px;
+      border-radius: 16px;
       background: #f9f9f9;
-      transition: 0.2s;
+      cursor: pointer;
+      transition: 0.25s;
     }
 
     .feature:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
       background: #f1f1f1;
     }
 
-    /* SERVICES */
+    .feature img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    /* SERVICES GRID */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -130,6 +138,39 @@
       color: white;
     }
 
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 500px;
+      text-align: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .close {
+      float: right;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9);}
+      to { opacity: 1; transform: scale(1);}
+    }
+
     /* CONTACT CTA */
     .contact-cta button {
       margin-top: 20px;
@@ -140,11 +181,29 @@
       color: white;
       font-size: 1rem;
       cursor: pointer;
-      transition: 0.2s;
     }
 
-    .contact-cta button:hover {
-      background: var(--secondary);
+    /* REVIEWS */
+    .review-carousel {
+      overflow: hidden;
+      max-width: 700px;
+      margin: 30px auto 0;
+    }
+
+    .review-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .review {
+      min-width: 100%;
+      padding: 30px;
+      background: #f9f9f9;
+      border-radius: 12px;
+    }
+
+    .review span {
+      color: gold;
     }
 
     /* FOOTER */
@@ -162,9 +221,8 @@
   <!-- NAVBAR -->
   <div class="navbar">
     <div class="logo">
-      <img src="img/Logo.jpeg" alt="Market Street Logo">
+      <img src="img/Logo.jpeg">
     </div>
-
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="contact.html">Contact</a>
@@ -177,121 +235,83 @@
   <!-- ABOUT -->
   <section class="section">
     <h2>About Us</h2>
-    <p>
-      Market Street is dedicated to providing a warm, welcoming experience with quality products and exceptional service. 
-      Our mission is to bring charm, care, and community together in one place.
-    </p>
+    <p>Market Street is dedicated to providing a warm, welcoming experience with quality products and exceptional service.</p>
   </section>
 
-  <!-- WHY US -->
-  <section class="section">
-    <h2>Why Choose Us</h2>
-    <div class="features">
-      <div class="feature">Friendly, personalized service</div>
-      <div class="feature">High-quality, carefully selected products</div>
-      <div class="feature">Locally trusted and community-focused</div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
+  <!-- INTERACTIVE SERVICES -->
   <section class="section">
     <h2>Our Services</h2>
-    <div class="services">
-      <div class="service">Retail Shopping</div>
-      <div class="service">Custom Orders</div>
-      <div class="service">Customer Support</div>
+    <div class="features">
+      
+      <div class="feature" onclick="openModal('Retail Shopping','We offer a curated selection of high-quality items in a welcoming environment.')">
+        <img src="img/service1.jpg">
+        Retail Shopping
+      </div>
+
+      <div class="feature" onclick="openModal('Custom Orders','Need something specific? We provide personalized custom orders tailored to your needs.')">
+        <img src="img/service2.jpg">
+        Custom Orders
+      </div>
+
+      <div class="feature" onclick="openModal('Customer Support','Our team is always ready to help with friendly and reliable service.')">
+        <img src="img/service3.jpg">
+        Customer Support
+      </div>
+
     </div>
   </section>
 
-  <!-- CONTACT CTA -->
+  <!-- CONTACT -->
   <section class="section contact-cta">
     <h2>Contact Us</h2>
-    <p>Have questions or want to learn more? We'd love to hear from you.</p>
     <button onclick="location.href='contact.html'">Go to Contact Page</button>
   </section>
-<!-- ADD THIS SECTION ABOVE FOOTER -->
 
-<section class="section">
-  <h2>Customer Reviews</h2>
-
-  <div class="review-carousel">
-    <div class="review-track" id="reviewTrack">
-      
-      <div class="review">
-        <p>"Lynda Ghaedi at Market Street Realty is the consummate professional that one strives for when seeking a real estate agent."</p>
-        <span>★★★★★</span>
+  <!-- REVIEWS -->
+  <section class="section">
+    <h2>Customer Reviews</h2>
+    <div class="review-carousel">
+      <div class="review-track" id="reviewTrack">
+        <div class="review"><p>"Amazing service!"</p><span>★★★★★</span></div>
+        <div class="review"><p>"Highly recommend!"</p><span>★★★★★</span></div>
+        <div class="review"><p>"Fantastic experience."</p><span>★★★★★</span></div>
       </div>
+    </div>
+  </section>
 
-      <div class="review">
-        <p>"Professional, friendly, and very knowledgeable. Highly recommend!"</p>
-        <span>★★★★★</span>
-      </div>
-
-      <div class="review">
-        <p>"A wonderful experience from start to finish. Will definitely return."</p>
-        <span>★★★★★</span>
-      </div>
-
-      <div class="review">
-        <p>"They made everything simple and stress-free. Fantastic team!"</p>
-        <span>★★★★★</span>
-      </div>
-
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
     </div>
   </div>
 
-  <br>
-  <a href="https://www.google.com/maps/place/Market+Street+Real+Estate+Services,+Inc./" target="_blank">
-    View more on Google →
-  </a>
-</section>
-
-<style>
-/* REVIEWS */
-.review-carousel {
-  overflow: hidden;
-  max-width: 700px;
-  margin: 30px auto 0;
-  position: relative;
-}
-
-.review-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.review {
-  min-width: 100%;
-  padding: 30px;
-  background: #f9f9f9;
-  border-radius: 12px;
-}
-
-.review p {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-.review span {
-  color: gold;
-  font-size: 1.2rem;
-}
-</style>
-
-<script>
-let index = 0;
-const track = document.getElementById("reviewTrack");
-const total = track.children.length;
-
-setInterval(() => {
-  index = (index + 1) % total;
-  track.style.transform = `translateX(-${index * 100}%)`;
-}, 4000);
-</script>
   <!-- FOOTER -->
   <div class="footer">
     © 2026 Market Street. All rights reserved.
   </div>
+
+<script>
+function openModal(title, text) {
+  document.getElementById('modalTitle').innerText = title;
+  document.getElementById('modalText').innerText = text;
+  document.getElementById('modal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+
+// Reviews carousel
+let index = 0;
+const track = document.getElementById("reviewTrack");
+setInterval(() => {
+  index = (index + 1) % track.children.length;
+  track.style.transform = `translateX(-${index * 100}%)`;
+}, 4000);
+</script>
 
 </body>
 </html>
