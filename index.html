@@ -209,7 +209,85 @@
     <p>Have questions or want to learn more? We'd love to hear from you.</p>
     <button onclick="location.href='contact.html'">Go to Contact Page</button>
   </section>
+<!-- ADD THIS SECTION ABOVE FOOTER -->
 
+<section class="section">
+  <h2>Customer Reviews</h2>
+
+  <div class="review-carousel">
+    <div class="review-track" id="reviewTrack">
+      
+      <div class="review">
+        <p>"Absolutely amazing service! They truly care about their clients."</p>
+        <span>★★★★★</span>
+      </div>
+
+      <div class="review">
+        <p>"Professional, friendly, and very knowledgeable. Highly recommend!"</p>
+        <span>★★★★★</span>
+      </div>
+
+      <div class="review">
+        <p>"A wonderful experience from start to finish. Will definitely return."</p>
+        <span>★★★★★</span>
+      </div>
+
+      <div class="review">
+        <p>"They made everything simple and stress-free. Fantastic team!"</p>
+        <span>★★★★★</span>
+      </div>
+
+    </div>
+  </div>
+
+  <br>
+  <a href="https://www.google.com/maps/place/Market+Street+Real+Estate+Services,+Inc./" target="_blank">
+    View more on Google →
+  </a>
+</section>
+
+<style>
+/* REVIEWS */
+.review-carousel {
+  overflow: hidden;
+  max-width: 700px;
+  margin: 30px auto 0;
+  position: relative;
+}
+
+.review-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.review {
+  min-width: 100%;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+.review p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.review span {
+  color: gold;
+  font-size: 1.2rem;
+}
+</style>
+
+<script>
+let index = 0;
+const track = document.getElementById("reviewTrack");
+const total = track.children.length;
+
+setInterval(() => {
+  index = (index + 1) % total;
+  track.style.transform = `translateX(-${index * 100}%)`;
+}, 4000);
+</script>
   <!-- FOOTER -->
   <div class="footer">
     © 2026 Market Street. All rights reserved.
