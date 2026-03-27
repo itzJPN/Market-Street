@@ -68,10 +68,20 @@
 
     /* BANNER */
     .banner {
-      width: 100%;
-      height: 300px;
-      background: url('img/5MS.jpeg') center/cover no-repeat;
-    }
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: url('img/5MS.jpeg') center/cover no-repeat;
+  overflow: hidden;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('img/logo-banner-main.png') center/contain no-repeat;
+  pointer-events: none;
+}
 
     /* SECTIONS */
     .section {
