@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Market Street</title>
 
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #00B0B9;
+      --secondary: #6558B1;
+      --text: #222;
+      --bg: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 32px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo img {
+      height: 42px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* PAGE HEADER */
+    .header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    .header h1 {
+      color: var(--secondary);
+      font-size: 2.5rem;
+    }
+
+    /* CONTACT GRID */
+    .contact-grid {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border: 2px solid #6558B1;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(101, 88, 177, 0.15);
+    }
+
+    .card h3 {
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .card p, .card a {
+      color: #555;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .card a:hover {
+      color: var(--primary);
+    }
+
+    /* SOCIALS */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .socials a {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1.5px solid var(--secondary);
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    .socials a:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    /* CONTACT FORM */
+    .form-section {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .form input, .form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 0.95rem;
+    }
+
+    .form button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: var(--primary);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .form button:hover {
+      background: var(--secondary);
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #eee;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="img/Logo.jpeg">
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="contact.html" style="background:#6558B1;color:white;">Contact</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you</p>
+  </div>
+
+  <!-- CONTACT INFO -->
+  <div class="contact-grid">
+
+    <div class="card">
+      <h3>Phone</h3>
+      <p><a href="tel:+11234567890">(123) 456-7890</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Email</h3>
+      <p><a href="mailto:info@marketstreet.com">info@marketstreet.com</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Fax</h3>
+      <p>(123) 456-7891</p>
+    </div>
+
+    <div class="card">
+      <h3>Socials</h3>
+      <div class="socials">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!--
+  <div class="form-section">
+    <h2>Send a Message</h2>
+    <form class="form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+  -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    © 2026 Market Street. All rights reserved.
+  </div>
+
+</body>
+</html>
